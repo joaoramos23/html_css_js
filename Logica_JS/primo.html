@@ -1,0 +1,48 @@
+<meta charset="UTF-8">
+<script>
+
+function pulaLinha() {
+
+        document.write("<br>");
+    }
+function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+function isprime(n) { //essa é a funcao para testar se é primo
+        if(n%2==0 || n%3==0){
+            return false;
+        }
+        
+        limit = Math.round(Math.sqrt(n));
+        var i = 5;
+        
+        while(i<(limit+1)){
+            if(n%i==0 || n%i+2==0){
+                return false;
+                break;
+            }
+            i=i+6;
+        }
+        return true;
+    }
+
+/// aqui começa a parte principal 
+tentativas = 1;
+
+while(tentativas<=3){
+    var chute = parseInt(prompt("Entre com um numero"));
+
+    if(isprime(chute)) { //isprime retorna true se for primo e false caso n seja primo
+        mostra("<br>Parabéns o numero é primo");
+        break;
+    } else {
+        mostra("<br>Você errou! Este número não é primo");
+    }
+    tentativas++;
+}
+
+mostra("FIM")
+
+</script>

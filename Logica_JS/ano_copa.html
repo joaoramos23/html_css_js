@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<script>
+
+	function pularLinha(a){
+		var linha = "<br>";
+		var pular = "";
+
+		for(var i = 0; i < a; i++){
+			pular = pular + linha;
+		}
+	
+		return pular;
+	}
+
+	function mostrar(a,b){
+		return document.write(a + pularLinha(b));
+	}
+	
+	var copaInicio = 1930;
+	var copaFinal = parseInt(prompt("Entre com a data da ultima copa"));
+	var copaSomar = Math.round((copaFinal - copaInicio)/4);
+	var total = 0;
+	
+	do{
+
+		if((copaInicio == 1942) || (copaInicio == 1946)){
+
+		}else{
+			mostrar((total + 1) + " - Teve copa no ano de " + copaInicio,1);
+			total++;
+		}
+		copaInicio = copaInicio + 4;
+
+	}while(copaInicio <= copaFinal);
+
+	mostrar("Teve um total de " + total + " copas.",2);
+
+</script>	

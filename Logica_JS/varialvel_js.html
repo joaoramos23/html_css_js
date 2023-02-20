@@ -1,0 +1,100 @@
+<meta charset="utf-8">
+
+<script> var j = 1980; </script>
+
+<h1>Estamos no ano de <script> document.write(j + "."); </script> </h1>
+
+<script>
+	function calcular(anoAtual,anoNascido){
+		var teste = null;
+
+		teste = anoAtual - anoNascido;
+
+		if(teste < 0){
+			teste = " não era nascido";
+		}else{
+			teste = " tem " + teste + " anos";
+		}
+
+		return teste;
+	}
+
+	document.write("João" + calcular(j,1999) + ".<br>");
+	document.write("Pedro" + calcular(j,1970)+ ".<br>");
+	document.write("Fernando" + calcular(j,1899) + ".<br>");
+</script>
+
+
+
+
+
+<h1><hr></h1>
+
+
+
+
+
+<script>
+	document.write("<h1>Vamos calcular a media!</h1>");
+
+	var media = null;
+
+	function calcularMedia(a,b,c){
+
+		var media = (a + b + c)/3;
+
+		if(!Number.isInteger(media)){
+			media = media.toFixed(2);
+		}
+		
+		media = "A media de " + a + " e " + b + " e " + c + " é " + media + ".<br>";
+
+		return media;
+	}
+
+	document.write(calcularMedia(50,25,15));
+	document.write(calcularMedia(33,2,41));
+	document.write(calcularMedia(25,89,55));
+	document.write(calcularMedia(2,2,2));
+	var das = "20";
+	var cal = (das + 10)/2;
+	document.write(typeof cal);
+</script>
+
+
+<h1><hr></h1>
+
+<h1>Funções</h1>
+<script>
+
+	function pularLinha(a){
+		var linha = "<br>";
+		var pular = "";
+
+		for(var i = 0; i < a; i++){
+			pular = pular + linha;
+		}
+	
+		return pular;
+	}
+
+	function mostrar(a,b){
+		return document.write(a + pularLinha(b));
+	}
+	mostrar(pularLinha(0));
+	mostrar("Agora, nosso chefe fez um novo pedido," + pularLinha(2) + " ele quer que existam duas linhas" + pularLinha(2) + " de intervalo entre cada frase, pois acredita que " + pularLinha(2) + "assim as linhas ficarão mais espaçadas. ");
+
+	mostrar(pularLinha(3));
+	mostrar("Olá, mundo",1);
+	mostrar("Olá pessoal",1);
+
+</script>
+
+<h1><hr></h1>
+
+<script>
+
+
+
+</script>
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<script>
+
+	function pularLinha(a){
+		var linha = "<br>";
+		var pular = "";
+
+		for(var i = 0; i < a; i++){
+			pular = pular + linha;
+		}
+	
+		return pular;
+	}
+
+	function mostrar(a,b){
+		return document.write(a + pularLinha(b));
+	}
+
+	function sortear(numero){
+
+		return Math.round(Math.random() * numero)	
+	}
+
+	var quantidadeSortear = parseInt(prompt("Digite quantos números você quer tentar adivinhar!"));
+	var numeroAdivinha = sortear(quantidadeSortear);
+	var quantidadeMaior = quantidadeSortear;
+	var quantidadeMenor = 0;
+
+	var chute = parseInt(prompt("Digite seu chute! Entre "+ quantidadeMenor +" e " + quantidadeMaior));
+	
+	do{
+		
+		if(chute != numeroAdivinha){
+			if(numeroAdivinha > chute){
+				alert("Pense em um número maior!");
+				if(quantidadeMenor < chute){
+					quantidadeMenor = chute;	
+				}
+			}else{
+				alert("Pense em um número menor!");
+				if(quantidadeMaior > chute){
+					quantidadeMaior = chute;	
+				}
+			}
+			chute = parseInt(prompt("Você errou, digite seu chute! Entre "+ quantidadeMenor +" e " + quantidadeMaior));
+
+		}
+		if(chute == numeroAdivinha){
+
+			mostrar("Você acertou! O número é " + numeroAdivinha + ".", 1);
+
+		}
+
+	}while(chute != numeroAdivinha);
+	
+	
+</script>	

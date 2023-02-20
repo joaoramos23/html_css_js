@@ -1,0 +1,60 @@
+<meta charset="utf-8">
+
+<h1>CALCULAR IMC</h1>
+
+
+<script type="text/javascript">
+
+	function pularLinha(a){
+		var linha = "<br>";
+		var pular = "";
+
+		for(var i = 0; i < a; i++){
+			pular = pular + linha;
+		}
+	
+		return pular;
+	}
+
+	function mostrar(a,b){
+		return document.write(a + pularLinha(b));
+	}
+
+	function calcularImc(altura,peso){
+		var imc = peso/(Math.pow(altura,2));
+		return parseFloat(imc.toFixed(2)); /* para arredondar */
+	}
+	
+	function pessoaImc(nome,altura,peso){
+		var cadastro = ("Nome: " + nome + pularLinha(1) + "Imc: " + calcularImc(altura,peso) + "<hr>");
+		return cadastro;
+	}
+
+	function perguntas(){
+	 	
+			var nome = prompt("Informe seu nome: ");
+			var altura = prompt("Informe sua altura: ");
+			var peso = prompt("Informe seu peso: ");
+
+			return pessoaImc(nome,altura,peso);	
+	 }
+
+
+	pularLinha(1);
+
+	mostrar(pessoaImc("João",1.76,90),0);
+	mostrar(pessoaImc("Fernando",1.76,80),0);
+	mostrar(pessoaImc("Marileide",1.60,85),0);
+
+	mostrar("Total: " + (calcularImc(1.76,90) + calcularImc(1.76,80) + calcularImc(1.60,85)) + "<hr>",0);
+
+	mostrar("<hr>",1);
+	
+	do{
+		
+		mostrar(perguntas(),0);
+		var resposta = prompt("Deseja cadastrar outra pessoa? (S/N)");
+
+	}while(resposta == "S");
+
+</script>
